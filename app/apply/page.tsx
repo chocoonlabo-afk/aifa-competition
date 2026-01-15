@@ -173,7 +173,7 @@ export default function ApplyPage() {
         {/* Application dates */}
         <h2 style={h3}>Application Schedule (2026 Edition)</h2>
         <p style={p}>
-          <strong>Entry period:</strong> January 30 — April 1 (based on
+          <strong>Entry period:</strong> January 15 — April 1 (based on
           international time zones)
           <br />
           <strong>Results announcement:</strong> around May 10 (subject to minor

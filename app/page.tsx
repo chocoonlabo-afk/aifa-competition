@@ -210,7 +210,7 @@ export default function Page() {
                   Entry period
                 </div>
                 <div style={{ fontWeight: 600 }}>
-                  30 January &ndash; 1 April
+                  15 January &ndash; 1 April
                 </div>
                 <div style={{ fontSize: "11px", opacity: 0.8 }}>
                   Based on international time (UTC).
@@ -369,7 +369,7 @@ Every participant receives written feedback and an official certificate — comb
               lineHeight: 1.7,
             }}
           >
-            <li>Entry period: 30 January &ndash; 1 April</li>
+            <li>Entry period: 15 January &ndash; 1 April</li>
             <li>Video submission deadline: 1 April (same as entry close)</li>
             <li>Results announcement: around 10 May</li>
           </ul>
