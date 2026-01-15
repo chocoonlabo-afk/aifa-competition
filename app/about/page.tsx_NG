@@ -1,0 +1,119 @@
+// app/about/page.tsx
+import React from 'react';
+
+const h1 = {
+  fontSize: '36px',
+  fontWeight: 700,
+  marginBottom: '16px'
+};
+
+const h2 = {
+  fontSize: '22px',
+  fontWeight: 600,
+  marginTop: '28px',
+  marginBottom: '12px'
+};
+
+const p = {
+  fontSize: '17px',
+  lineHeight: 1.6,
+  marginBottom: '14px'
+};
+
+const ul = {
+  fontSize: '17px',
+  lineHeight: 1.6,
+  marginBottom: '14px',
+  paddingLeft: '20px'
+};
+
+export default function AboutPage() {
+  return (
+    <main style={{ padding: '40px 24px', maxWidth: '960px', margin: '0 auto' }}>
+      <h1 style={h1}>About AIFA</h1>
+
+      <p style={p}>
+        AIFA International Music Competition (“AIFA”) is a global online classical music
+        competition designed to support the long-term artistic growth of young musicians.
+        AIFA combines AI-assisted performance analysis with evaluations by an international
+        jury to provide fair, structured, and meaningful musical feedback.
+      </p>
+
+      <p style={p}>
+        Our aim is not only to award prizes, but to contribute to each participant’s
+        musical journey through motivation, assessment, and international visibility.
+      </p>
+
+      <h2 style={h2}>Mission</h2>
+
+      <ul style={ul}>
+        <li>Provide an accessible international stage for young musicians</li>
+        <li>Offer structured and constructive performance feedback</li>
+        <li>Encourage progression and long-term artistic development</li>
+        <li>Build motivation through recognition and awards</li>
+        <li>Promote a modern, transparent competition format</li>
+      </ul>
+
+      <h2 style={h2}>Future Vision</h2>
+
+      <p style={p}>
+        AIFA’s early editions will begin as a compact online competition in performance
+        categories. In the near future, we plan to expand into:
+      </p>
+
+      <ul style={ul}>
+        <li>Multiple instrument categories</li>
+        <li>Age-based grading and certification (exam-style system)</li>
+        <li>Annual international performance award cycles</li>
+        <li>Optional live masterclasses and gala events</li>
+        <li>AIFA academic and advisory network for teachers and conservatories</li>
+      </ul>
+
+      <h2 style={h2}>Organisation</h2>
+
+      <p style={p}>
+        AIFA is organised by the AIFA International Music Competition Office. The
+        competition adopts an international standard structure:
+      </p>
+
+      <ul style={ul}>
+        <li>Participants listed with name and nationality</li>
+        <li>Teacher names may be added optionally</li>
+        <li>Full results may be publicly announced</li>
+        <li>Video publication is optional and curated</li>
+      </ul>
+
+      <p style={p}>
+        Information on jury and advisory members will be announced on this website as they
+        are appointed. AIFA reserves the right to appoint judges for each category and
+        edition.
+      </p>
+
+      <h2 style={h2}>Legal &amp; Administrative Framework</h2>
+
+      <p style={p}>
+        AIFA follows a clear legal and administrative framework for international
+        participation. Details regarding:
+      </p>
+
+      <ul style={ul}>
+        <li>Terms &amp; Conditions</li>
+        <li>Privacy Policy</li>
+        <li>Refund Policy</li>
+        <li>Media &amp; Publicity Consent</li>
+      </ul>
+
+      <p style={p}>
+        can be found in the Legal section of this website.
+      </p>
+
+      <h2 style={h2}>Contact</h2>
+
+      <p style={p}>
+        <strong>AIFA Competition Office (ChocoOnLabo)</strong>
+        <br />
+        Email: (to be published)
+      </p>
+    </main>
+  );
+}

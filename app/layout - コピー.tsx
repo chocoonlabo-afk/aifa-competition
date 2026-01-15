@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import Header from "./header";
-import Footer from "./footer";
 
 export const metadata = {
   title: "AIFA International Music Competition",
@@ -22,7 +21,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <Header />
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );

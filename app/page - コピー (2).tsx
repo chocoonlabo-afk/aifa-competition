@@ -33,6 +33,21 @@ export default function Page() {
     color: "#f9fafb",
   };
 
+  const pillStyle: CSSProperties = {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "8px",
+    padding: "4px 10px",
+    borderRadius: "999px",
+    fontSize: "11px",
+    fontWeight: 600,
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    background:
+      "linear-gradient(135deg, rgba(250,204,21,0.16), rgba(56,189,248,0.18))",
+    color: "#facc6b",
+  };
+
   const primaryBtn: CSSProperties = {
     borderRadius: "999px",
     padding: "11px 24px",
@@ -70,49 +85,36 @@ export default function Page() {
         >
           {/* Left side: main message */}
           <div>
-            {/* ロゴ＋タイトル */}
-            <div
+            <div style={pillStyle}>
+              <span>Early Start Model</span>
+              <span style={{ opacity: 0.75 }}>Online-only Edition</span>
+            </div>
+
+            <h1
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "18px",
-                marginBottom: "10px",
+                fontSize: "32px",
+                lineHeight: 1.2,
+                margin: "18px 0 10px",
+                fontWeight: 800,
+                color: "#fefce8",
               }}
             >
-              <img
-                src="/aimc-logo.png"
-                alt="AIFA International Music Competition logo"
-                style={{
-                  height: "72px",
-                  width: "auto",
-                  flexShrink: 0,
-                }}
-              />
-              <h1
-                style={{
-                  fontSize: "30px",
-                  lineHeight: 1.2,
-                  margin: 0,
-                  fontWeight: 800,
-                  color: "#fefce8",
-                }}
-              >
-                AIFA International Music Competition
-              </h1>
-            </div>
+              AIFA International Music Competition
+            </h1>
 
             <p
               style={{
-                margin: "8px 0 18px",
+                margin: "0 0 18px",
                 fontSize: "15px",
                 lineHeight: 1.7,
                 color: "#cbd5f5",
               }}
             >
-              An online classical music competition for children, combining{" "}
+              A new online competition where{" "}
               <strong>AI-based analysis</strong> and an{" "}
-              <strong>international jury</strong>. Accessible, transparent, and
-              focused on long-term artistic growth instead of rankings alone.
+              <strong>international jury</strong> work together to support young
+              musicians. Designed to be accessible and transparent, with a focus
+              on long-term artistic growth rather than one-time results only.
             </p>
 
             <p
@@ -123,9 +125,10 @@ export default function Page() {
                 color: "#e5e7eb",
               }}
             >
-              The first edition is a compact online competition for{" "}
-              <strong>Violin, Cello and Piano</strong>, aimed at young players
-              from around the world.
+              The first edition will start as a compact{" "}
+              <strong>online-only model</strong> for Violin, Cello and Piano.
+              In future years, AIFA will expand categories and develop an
+              exam-style certification system.
             </p>
 
             <div
@@ -153,8 +156,8 @@ export default function Page() {
                 margin: 0,
               }}
             >
-              Application period and detailed schedule may be updated. Any
-              changes or delays will be announced on this website.
+              Application period and detailed schedule may be updated. Please
+              check this website for the latest information.
             </p>
           </div>
 
@@ -190,9 +193,9 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                The 2026 edition will be held entirely online. The schedule
-                below is given in international time and may be adjusted if
-                necessary.
+                The “early start” edition of AIFA will be held as a fully online
+                competition. It is intentionally small and focused so that we
+                can refine the system before expanding in later years.
               </p>
             </div>
 
@@ -206,24 +209,12 @@ export default function Page() {
               }}
             >
               <div>
-                <div style={{ opacity: 0.75, marginBottom: 2 }}>
-                  Entry period
-                </div>
-                <div style={{ fontWeight: 600 }}>
-                  30 January &ndash; 1 April
-                </div>
-                <div style={{ fontSize: "11px", opacity: 0.8 }}>
-                  Based on international time (UTC).
-                </div>
+                <div style={{ opacity: 0.75, marginBottom: 2 }}>Planned</div>
+                <div style={{ fontWeight: 600 }}>Summer 2026</div>
               </div>
               <div>
-                <div style={{ opacity: 0.75, marginBottom: 2 }}>
-                  Results announcement
-                </div>
-                <div style={{ fontWeight: 600 }}>Around 10 May</div>
-                <div style={{ fontSize: "11px", opacity: 0.8 }}>
-                  May shift slightly; delays will be announced on this site.
-                </div>
+                <div style={{ opacity: 0.75, marginBottom: 2 }}>Format</div>
+                <div style={{ fontWeight: 600 }}>Video submission</div>
               </div>
               <div>
                 <div style={{ opacity: 0.75, marginBottom: 2 }}>
@@ -233,7 +224,7 @@ export default function Page() {
               </div>
               <div>
                 <div style={{ opacity: 0.75, marginBottom: 2 }}>Age range</div>
-                <div style={{ fontWeight: 600 }}>Approx. 3&ndash;12 years</div>
+                <div style={{ fontWeight: 600 }}>Approx. 5–18 years</div>
               </div>
             </div>
           </aside>
@@ -276,8 +267,8 @@ export default function Page() {
                 }}
               >
                 Participate from anywhere in the world. All rounds are held via
-                video submission, making it easier for families and teachers to
-                join without travel.
+                video submission, reducing travel costs and making it easier to
+                join.
               </p>
             </div>
 
@@ -309,7 +300,7 @@ export default function Page() {
               >
                 AI helps analyse pitch, rhythm and consistency. Final artistic
                 decisions remain with experienced human jury members, combining
-                objective data and musical insight.
+                objectivity and musical insight.
               </p>
             </div>
 
@@ -339,8 +330,8 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                Clear categories, reasonable fees, and results designed for long-term artistic growth.
-Every participant receives written feedback and an official certificate — combining the recognition of a competition with the educational value of an examination.
+                Clear categories, reasonable fees and result information that
+                focuses on each musician&apos;s next step, not just rankings.
               </p>
             </div>
           </div>
@@ -356,9 +347,8 @@ Every participant receives written feedback and an official certificate — comb
               color: "#e5e7eb",
             }}
           >
-            The basic timeline for the first edition is as follows. All dates
-            are based on international time (UTC). If there are changes or
-            delays, an announcement will be made on this website.
+            Exact dates may change, but the basic schedule for the early edition
+            is as follows:
           </p>
           <ul
             style={{
@@ -369,9 +359,9 @@ Every participant receives written feedback and an official certificate — comb
               lineHeight: 1.7,
             }}
           >
-            <li>Entry period: 30 January &ndash; 1 April</li>
-            <li>Video submission deadline: 1 April (same as entry close)</li>
-            <li>Results announcement: around 10 May</li>
+            <li>Entry period: July 2026 (approx.)</li>
+            <li>Video submission deadline: late July 2026</li>
+            <li>Results announcement: August 2026</li>
           </ul>
           <a href="/guidelines" style={{ textDecoration: "none" }}>
             <span

@@ -1,0 +1,40 @@
+:root {
+  /* Colors */
+  --color-gold: #d4af37;
+  --color-gold-dark: #b58f2b;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Text / Background */
+  --color-bg: var(--color-white);
+  --color-text: var(--color-black);
+
+  /* Shadows */
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  /* Border Lines */
+  --border-gold: 1px solid var(--color-gold);
+}
+
+/* Buttons */
+.btn-gold {
+  background: var(--color-gold);
+  color: var(--color-black);
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-gold:hover {
+  background: var(--color-gold-dark);
+}
+
+/* Footer Base */
+.footer-dark {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 2rem 0;
+  text-align: center;
+}

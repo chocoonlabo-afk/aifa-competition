@@ -33,6 +33,21 @@ export default function Page() {
     color: "#f9fafb",
   };
 
+  const pillStyle: CSSProperties = {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "8px",
+    padding: "4px 10px",
+    borderRadius: "999px",
+    fontSize: "11px",
+    fontWeight: 600,
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    background:
+      "linear-gradient(135deg, rgba(250,204,21,0.16), rgba(56,189,248,0.18))",
+    color: "#facc6b",
+  };
+
   const primaryBtn: CSSProperties = {
     borderRadius: "999px",
     padding: "11px 24px",
@@ -68,64 +83,37 @@ export default function Page() {
             gap: "24px",
           }}
         >
-          {/* Left side: main message */}
+          {/* Left side: text */}
           <div>
-            {/* ロゴ＋タイトル */}
-            <div
+            <div style={pillStyle}>
+              <span>Early Start Model</span>
+              <span style={{ opacity: 0.75 }}>Online-only edition</span>
+            </div>
+
+            <h1
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "18px",
-                marginBottom: "10px",
+                fontSize: "32px",
+                lineHeight: 1.2,
+                margin: "18px 0 10px",
+                fontWeight: 800,
+                color: "#fefce8",
               }}
             >
-              <img
-                src="/aimc-logo.png"
-                alt="AIFA International Music Competition logo"
-                style={{
-                  height: "72px",
-                  width: "auto",
-                  flexShrink: 0,
-                }}
-              />
-              <h1
-                style={{
-                  fontSize: "30px",
-                  lineHeight: 1.2,
-                  margin: 0,
-                  fontWeight: 800,
-                  color: "#fefce8",
-                }}
-              >
-                AIFA International Music Competition
-              </h1>
-            </div>
+              AIFA International Music Competition
+            </h1>
 
             <p
               style={{
-                margin: "8px 0 18px",
+                margin: "0 0 20px",
                 fontSize: "15px",
                 lineHeight: 1.7,
                 color: "#cbd5f5",
               }}
             >
-              An online classical music competition for children, combining{" "}
-              <strong>AI-based analysis</strong> and an{" "}
+              Global online competition for young musicians, combining{" "}
+              <strong>AI-supported evaluation</strong> and{" "}
               <strong>international jury</strong>. Accessible, transparent, and
-              focused on long-term artistic growth instead of rankings alone.
-            </p>
-
-            <p
-              style={{
-                margin: "0 0 22px",
-                fontSize: "14px",
-                lineHeight: 1.7,
-                color: "#e5e7eb",
-              }}
-            >
-              The first edition is a compact online competition for{" "}
-              <strong>Violin, Cello and Piano</strong>, aimed at young players
-              from around the world.
+              focused on long-term artistic growth.
             </p>
 
             <div
@@ -137,12 +125,10 @@ export default function Page() {
               }}
             >
               <a href="/apply">
-                <button style={primaryBtn}>Apply for the next edition</button>
+                <button style={primaryBtn}>Apply Now</button>
               </a>
               <a href="/categories">
-                <button style={secondaryBtn}>
-                  View categories &amp; rules
-                </button>
+                <button style={secondaryBtn}>View Categories &amp; Rules</button>
               </a>
             </div>
 
@@ -153,12 +139,12 @@ export default function Page() {
                 margin: 0,
               }}
             >
-              Application period and detailed schedule may be updated. Any
-              changes or delays will be announced on this website.
+              Application period and detailed schedule are subject to change.
+              Please check this website for the latest information.
             </p>
           </div>
 
-          {/* Right side: 2026 overview */}
+          {/* Right side: outline info */}
           <aside
             style={{
               borderRadius: "16px",
@@ -190,9 +176,9 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                The 2026 edition will be held entirely online. The schedule
-                below is given in international time and may be adjusted if
-                necessary.
+                The first AIFA edition will start as a compact online
+                competition. Future years will expand to more categories and an
+                exam-style certification system.
               </p>
             </div>
 
@@ -206,34 +192,20 @@ export default function Page() {
               }}
             >
               <div>
-                <div style={{ opacity: 0.75, marginBottom: 2 }}>
-                  Entry period
-                </div>
-                <div style={{ fontWeight: 600 }}>
-                  30 January &ndash; 1 April
-                </div>
-                <div style={{ fontSize: "11px", opacity: 0.8 }}>
-                  Based on international time (UTC).
-                </div>
+                <div style={{ opacity: 0.75, marginBottom: 2 }}>Planned</div>
+                <div style={{ fontWeight: 600 }}>Summer 2026</div>
               </div>
               <div>
-                <div style={{ opacity: 0.75, marginBottom: 2 }}>
-                  Results announcement
-                </div>
-                <div style={{ fontWeight: 600 }}>Around 10 May</div>
-                <div style={{ fontSize: "11px", opacity: 0.8 }}>
-                  May shift slightly; delays will be announced on this site.
-                </div>
+                <div style={{ opacity: 0.75, marginBottom: 2 }}>Format</div>
+                <div style={{ fontWeight: 600 }}>Video submission</div>
               </div>
               <div>
-                <div style={{ opacity: 0.75, marginBottom: 2 }}>
-                  Instruments
-                </div>
+                <div style={{ opacity: 0.75, marginBottom: 2 }}>Instruments</div>
                 <div style={{ fontWeight: 600 }}>Violin / Cello / Piano</div>
               </div>
               <div>
-                <div style={{ opacity: 0.75, marginBottom: 2 }}>Age range</div>
-                <div style={{ fontWeight: 600 }}>Approx. 3&ndash;12 years</div>
+                <div style={{ opacity: 0.75, marginBottom: 2 }}>Age Range</div>
+                <div style={{ fontWeight: 600 }}>Approx. 5–18 yrs</div>
               </div>
             </div>
           </aside>
@@ -241,7 +213,7 @@ export default function Page() {
 
         {/* Why AIFA */}
         <section style={sectionCard}>
-          <h2 style={sectionTitle}>Why choose AIFA?</h2>
+          <h2 style={sectionTitle}>Why AIFA?</h2>
           <div
             style={{
               display: "grid",
@@ -265,7 +237,7 @@ export default function Page() {
                   color: "#fefce8",
                 }}
               >
-                Global online competition
+                Global Online Competition
               </h3>
               <p
                 style={{
@@ -275,9 +247,8 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                Participate from anywhere in the world. All rounds are held via
-                video submission, making it easier for families and teachers to
-                join without travel.
+                Join from anywhere in the world. All rounds are based on video
+                submissions, reducing travel and cost barriers.
               </p>
             </div>
 
@@ -297,7 +268,7 @@ export default function Page() {
                   color: "#fefce8",
                 }}
               >
-                AI-supported evaluation
+                AI-supported Evaluation
               </h3>
               <p
                 style={{
@@ -307,9 +278,8 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                AI helps analyse pitch, rhythm and consistency. Final artistic
-                decisions remain with experienced human jury members, combining
-                objective data and musical insight.
+                AI helps analyse intonation, rhythm and consistency, while final
+                artistic decisions remain with experienced human jury members.
               </p>
             </div>
 
@@ -329,7 +299,7 @@ export default function Page() {
                   color: "#fefce8",
                 }}
               >
-                Accessible &amp; transparent
+                Accessible &amp; Transparent
               </h3>
               <p
                 style={{
@@ -339,8 +309,8 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                Clear categories, reasonable fees, and results designed for long-term artistic growth.
-Every participant receives written feedback and an official certificate — combining the recognition of a competition with the educational value of an examination.
+                Clear categories, reasonable fees, and result information that
+                supports each musician&apos;s next step.
               </p>
             </div>
           </div>
@@ -348,7 +318,7 @@ Every participant receives written feedback and an official certificate — comb
 
         {/* Schedule */}
         <section style={sectionCard}>
-          <h2 style={sectionTitle}>Competition schedule (draft)</h2>
+          <h2 style={sectionTitle}>Competition Schedule (planned)</h2>
           <p
             style={{
               margin: "0 0 14px",
@@ -356,9 +326,8 @@ Every participant receives written feedback and an official certificate — comb
               color: "#e5e7eb",
             }}
           >
-            The basic timeline for the first edition is as follows. All dates
-            are based on international time (UTC). If there are changes or
-            delays, an announcement will be made on this website.
+            Exact dates will be published after the official launch. The current
+            plan:
           </p>
           <ul
             style={{
@@ -369,9 +338,9 @@ Every participant receives written feedback and an official certificate — comb
               lineHeight: 1.7,
             }}
           >
-            <li>Entry period: 30 January &ndash; 1 April</li>
-            <li>Video submission deadline: 1 April (same as entry close)</li>
-            <li>Results announcement: around 10 May</li>
+            <li>Entry period: July 2026 (approx.)</li>
+            <li>Video submission deadline: late July 2026</li>
+            <li>Results announcement: August 2026</li>
           </ul>
           <a href="/guidelines" style={{ textDecoration: "none" }}>
             <span
@@ -390,7 +359,7 @@ Every participant receives written feedback and an official certificate — comb
 
         {/* Winners / Results */}
         <section style={sectionCard}>
-          <h2 style={sectionTitle}>Winners &amp; results</h2>
+          <h2 style={sectionTitle}>Winners &amp; Results</h2>
           <p
             style={{
               margin: "0 0 10px",
@@ -398,8 +367,8 @@ Every participant receives written feedback and an official certificate — comb
               color: "#e5e7eb",
             }}
           >
-            After the 2026 edition has finished, prize winners and selected
-            performances will be introduced on the results page.
+            After each edition, prize winners and selected performances will be
+            introduced on the results page.
           </p>
           <a href="/results" style={{ textDecoration: "none" }}>
             <span
@@ -415,7 +384,7 @@ Every participant receives written feedback and an official certificate — comb
                   "linear-gradient(135deg, #facc6b, rgba(248,250,252,0.98))",
               }}
             >
-              Go to results page
+              Go to Results page
             </span>
           </a>
         </section>

@@ -1,7 +1,8 @@
 import "./globals.css";
-import type { ReactNode } from "react";
+import "./theme.css";
+
+import { ReactNode } from "react";
 import Header from "./header";
-import Footer from "./footer";
 
 export const metadata = {
   title: "AIFA International Music Competition",
@@ -11,18 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body
-        style={{
-          margin: 0,
-          fontFamily:
-            "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
-          background: "#050816", // ネイビー系
-          color: "#e5e7eb",
-        }}
-      >
+      <body className="min-h-screen bg-gray-50 text-gray-900">
+        {/* 共通ヘッダー */}
         <Header />
+
+        {/* 各ページのコンテンツ */}
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );
