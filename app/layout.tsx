@@ -1,11 +1,10 @@
 // app/layout.tsx
 import "./globals.css";
 import type { ReactNode } from "react";
+import Script from "next/script";
 import HeaderSwitcher from "./HeaderSwitcher";
 import FooterSwitcher from "./FooterSwitcher";
-import Script from "next/script";
 
-// ★ここを NEXT_PUBLIC_GTAG_ID にする
 const GA_ID = process.env.NEXT_PUBLIC_GTAG_ID;
 
 export const metadata = {
@@ -19,7 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         {GA_ID && (
           <>
-            {/* GA4 本体読み込み */}
+            {/* gtag.js 本体の読み込み */}
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
               strategy="afterInteractive"
