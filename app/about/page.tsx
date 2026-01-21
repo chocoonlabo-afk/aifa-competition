@@ -1,5 +1,6 @@
 // app/about/page.tsx
 import type { CSSProperties } from "react";
+import Image from "next/image";
 
 export default function AboutPage() {
   const wrapper: CSSProperties = {
@@ -75,6 +76,14 @@ export default function AboutPage() {
           <strong>experienced human jury</strong> to provide both fair evaluation and meaningful
           feedback.
         </p>
+
+<Image
+  src="/aifa-framework.png"
+  alt="AIFA Assessment Framework"
+  width={900}
+  height={600}
+  style={{ width: "100%", borderRadius: "12px", margin: "20px 0" }}
+/>
 
         <h2 style={h3}>Mission</h2>
         <p style={p}>We want to create a stage where talented players can:</p>

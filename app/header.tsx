@@ -10,6 +10,38 @@ const navItems = [
 ];
 
 export default function Header() {
+  // 共通ナビリンク
+  const navLink = {
+    textDecoration: "none",
+    color: "#e5e7eb",
+    padding: "4px 0",
+    opacity: 0.9,
+  } as const;
+
+  // 検定ヘッダーと同じ Apply ボタン風
+  const applyButton = {
+    padding: "8px 18px",
+    borderRadius: 9999,
+    border: "none",
+    textDecoration: "none",
+    fontSize: "13px",
+    fontWeight: 600,
+    background:
+      "linear-gradient(135deg, #f59e0b 0%, #fbbf24 40%, #fde68a 100%)",
+    color: "#020617",
+    boxShadow: "0 10px 25px rgba(245,158,11,0.4)",
+  } as const;
+
+  // Competition site と同デザインの小さなリンク
+  const navLinkSmall = {
+    ...navLink,
+    fontSize: "11px",
+    textTransform: "uppercase" as const,
+    letterSpacing: "0.16em",
+    color: "#9ca3af",
+    padding: "4px 4px",
+  } as const;
+
   return (
     <header
       style={{
@@ -71,7 +103,7 @@ export default function Header() {
                   fontWeight: 700,
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
-                  color: "#facc6b", // ゴールド
+                  color: "#facc6b", // gold
                 }}
               >
                 AIFA
@@ -91,7 +123,7 @@ export default function Header() {
           </div>
         </a>
 
-        {/* Nav items */}
+        {/* Nav */}
         <nav
           style={{
             display: "flex",
@@ -103,20 +135,28 @@ export default function Header() {
             fontWeight: 600,
           }}
         >
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              style={{
-                textDecoration: "none",
-                color: "#e5e7eb",
-                padding: "4px 0",
-                opacity: 0.9,
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isApply = item.label === "Apply";
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                style={isApply ? applyButton : navLink}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+
+          {/* 小さな検定サイトリンク（別タブ） */}
+          <a
+            href="/violin-exam"
+            target="_blank"
+            rel="noreferrer"
+            style={navLinkSmall}
+          >
+            Violin Exam
+          </a>
         </nav>
       </div>
     </header>

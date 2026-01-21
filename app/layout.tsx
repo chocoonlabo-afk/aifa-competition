@@ -1,7 +1,8 @@
+// app/layout.tsx
 import "./globals.css";
 import type { ReactNode } from "react";
-import Header from "./header";
-import Footer from "./footer";
+import HeaderSwitcher from "./HeaderSwitcher";
+import FooterSwitcher from "./FooterSwitcher";
 
 export const metadata = {
   title: "AIFA International Music Competition",
@@ -20,9 +21,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           color: "#e5e7eb",
         }}
       >
-        <Header />
+        <HeaderSwitcher />
         <main>{children}</main>
-        <Footer />
+        <FooterSwitcher />
       </body>
     </html>
   );
