@@ -128,59 +128,9 @@ export default function ApplyPage() {
     color: "#e5e7eb",
   };
 
-  const extensionBanner: CSSProperties = {
-    margin: "0 0 20px",
-    padding: "14px 16px",
-    borderRadius: "16px",
-    background:
-      "linear-gradient(135deg, rgba(249,115,22,0.18), rgba(250,204,21,0.12))",
-    border: "1px solid rgba(251,191,36,0.45)",
-    boxShadow: "0 10px 28px rgba(249,115,22,0.12)",
-  };
-
-  const extensionTop: CSSProperties = {
-    fontSize: "12px",
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    color: "#fde68a",
-    fontWeight: 700,
-    marginBottom: "6px",
-  };
-
-  const extensionMain: CSSProperties = {
-    fontSize: "24px",
-    lineHeight: 1.25,
-    fontWeight: 800,
-    color: "#fff7ed",
-    margin: "0 0 6px",
-  };
-
-  const extensionSub: CSSProperties = {
-    fontSize: "13px",
-    lineHeight: 1.7,
-    color: "#fed7aa",
-    margin: 0,
-  };
-
-  const infoBox: CSSProperties = {
-    marginTop: "16px",
-    padding: "14px 16px",
-    borderRadius: "14px",
-    background: "rgba(59,130,246,0.12)",
-    border: "1px solid rgba(96,165,250,0.35)",
-  };
-
-  const infoTitle: CSSProperties = {
-    margin: "0 0 6px",
-    fontSize: "13px",
-    fontWeight: 700,
-    color: "#bfdbfe",
-    textTransform: "uppercase",
-    letterSpacing: "0.06em",
-  };
-
   return (
     <main style={wrapper}>
+      {/* PayPal SDK 読み込み */}
       <Script
         src="https://www.paypal.com/sdk/js?client-id=BAAAZ14LHlKNjiIutEHITDYC9Cz2GVgoG2LiN4qBJtPb6q7tTiWpQOT2CcD9izf9Pjhyn0Ayo0QKjXr3Ig&components=hosted-buttons&disable-funding=venmo&currency=USD"
         strategy="afterInteractive"
@@ -220,36 +170,17 @@ export default function ApplyPage() {
           International Music Competition (2026 Spring Edition).
         </p>
 
-        <div style={extensionBanner}>
-          <div style={extensionTop}>Final Extension</div>
-          <p style={extensionMain}>Application Deadline Extended to 15 April 2026 (UTC)</p>
-          <p style={extensionSub}>
-            To provide additional opportunities for participation, the application
-            deadline has been extended. This is the final extension and no further
-            extensions will be announced.
-          </p>
-        </div>
-
+        {/* Application dates */}
         <h2 style={h3}>Application Schedule (2026 Edition)</h2>
         <p style={p}>
-          <strong>Entry period:</strong> January 15 — April 15, 2026 (Final Extension)
+          <strong>Entry period:</strong> January 15 — April 1 (based on
+          international time zones)
           <br />
-          <strong>Video submission deadline:</strong> April 15, 2026
-          <br />
-          <strong>Results announcement:</strong> around May 10, 2026 (subject to minor
+          <strong>Results announcement:</strong> around May 10 (subject to minor
           adjustments; any delays will be announced on this website)
         </p>
 
-        <div style={infoBox}>
-          <p style={infoTitle}>Important Note</p>
-          <p style={p}>
-            If you would like to secure your place first, you may complete the{" "}
-            <strong>payment and entry form before uploading your video</strong>.
-            In that case, please submit your video link later, no later than{" "}
-            <strong>15 April 2026 (UTC)</strong>.
-          </p>
-        </div>
-
+        {/* Steps */}
         <h2 style={h3}>Application Steps</h2>
         <div style={stepsWrap}>
           <div style={stepCard}>
@@ -266,10 +197,6 @@ export default function ApplyPage() {
               Record your performance and upload it to YouTube as{" "}
               <strong>Unlisted</strong>. Editing, audio replacement, or effects
               are not allowed.
-              <br />
-              <br />
-              If your video is not ready yet, you may submit it later, as long as
-              the video link is sent by <strong>15 April 2026 (UTC)</strong>.
             </p>
           </div>
 
@@ -286,16 +213,13 @@ export default function ApplyPage() {
             <h3 style={stepTitle}>Step 4 — Submit Entry Form</h3>
             <p style={p}>
               After payment, fill in the online entry form with your details,
-              repertoire, and video link.
-              <br />
-              <br />
-              If the video is not yet available at the time of entry, you may
-              submit the form first and send the video link afterward. For minors,
-              a parent or guardian must provide consent for participation.
+              repertoire, and video link. For minors, a parent or guardian must
+              provide consent for participation.
             </p>
           </div>
         </div>
 
+        {/* Buttons */}
         <div style={btnWrap}>
           <a style={primaryBtn} href="#payment">
             Pay Entry Fee
@@ -308,6 +232,7 @@ export default function ApplyPage() {
           </a>
         </div>
 
+        {/* Payment section */}
         <section id="payment" style={{ marginTop: "28px" }}>
           <h2 style={h3}>Pay Entry Fee (2026 Spring Edition)</h2>
           <p style={p}>
@@ -355,8 +280,7 @@ export default function ApplyPage() {
           <p style={note}>
             Your application is complete only when{" "}
             <strong>both the payment and the entry form</strong> have been
-            received. If your video is not ready yet, you may send the video link
-            afterward, provided that it is submitted by <strong>15 April 2026 (UTC)</strong>.
+            received.
           </p>
         </section>
       </section>
