@@ -56,54 +56,6 @@ export default function Page() {
     color: "#e5e7eb",
   };
 
-  const extensionBadge: CSSProperties = {
-    display: "inline-flex",
-    alignItems: "center",
-    gap: "8px",
-    padding: "8px 14px",
-    borderRadius: "999px",
-    background: "rgba(249,115,22,0.14)",
-    border: "1px solid rgba(251,146,60,0.5)",
-    color: "#fdba74",
-    fontSize: "13px",
-    fontWeight: 700,
-    marginBottom: "14px",
-  };
-
-  const deadlineBox: CSSProperties = {
-    margin: "0 0 22px",
-    padding: "16px 18px",
-    borderRadius: "16px",
-    background:
-      "linear-gradient(135deg, rgba(251,191,36,0.18), rgba(249,115,22,0.12))",
-    border: "1px solid rgba(251,191,36,0.45)",
-    boxShadow: "0 10px 28px rgba(249,115,22,0.12)",
-  };
-
-  const deadlineLabel: CSSProperties = {
-    fontSize: "12px",
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    color: "#fde68a",
-    fontWeight: 700,
-    marginBottom: "6px",
-  };
-
-  const deadlineMain: CSSProperties = {
-    fontSize: "28px",
-    lineHeight: 1.2,
-    fontWeight: 800,
-    color: "#fff7ed",
-    margin: "0 0 6px",
-  };
-
-  const deadlineSub: CSSProperties = {
-    fontSize: "13px",
-    lineHeight: 1.6,
-    color: "#fed7aa",
-    margin: 0,
-  };
-
   return (
     <main style={outerStyle}>
       <div style={containerStyle}>
@@ -118,12 +70,6 @@ export default function Page() {
         >
           {/* Left side: main message */}
           <div>
-            <div style={extensionBadge}>
-              <span>Final Extension</span>
-              <span style={{ opacity: 0.7 }}>•</span>
-              <span>Last Chance to Apply</span>
-            </div>
-
             {/* ロゴ＋タイトル */}
             <div
               style={{
@@ -169,16 +115,6 @@ export default function Page() {
               focused on long-term artistic growth instead of rankings alone.
             </p>
 
-            <div style={deadlineBox}>
-              <div style={deadlineLabel}>New Application Deadline</div>
-              <p style={deadlineMain}>Extended to 15 April 2026 (UTC)</p>
-              <p style={deadlineSub}>
-                To provide additional opportunities for participation, the
-                application deadline has been extended. This is the final
-                extension and no further extensions will be announced.
-              </p>
-            </div>
-
             <p
               style={{
                 margin: "0 0 22px",
@@ -201,24 +137,14 @@ export default function Page() {
               }}
             >
               <a href="/apply">
-                <button style={primaryBtn}>Apply Now for 2026 Edition</button>
+                <button style={primaryBtn}>Apply for the next edition</button>
               </a>
               <a href="/categories">
                 <button style={secondaryBtn}>
-                  View Categories &amp; Rules
+                  View categories &amp; rules
                 </button>
               </a>
             </div>
-
-            <p
-              style={{
-                fontSize: "12px",
-                color: "#cbd5e1",
-                margin: "0 0 6px",
-              }}
-            >
-              Early applicants will receive priority review.
-            </p>
 
             <p
               style={{
@@ -227,7 +153,8 @@ export default function Page() {
                 margin: 0,
               }}
             >
-              Any important schedule changes will be announced on this website.
+              Application period and detailed schedule may be updated. Any
+              changes or delays will be announced on this website.
             </p>
           </div>
 
@@ -253,7 +180,7 @@ export default function Page() {
                   color: "#fefce8",
                 }}
               >
-                2026 Edition — Overview
+                2026 Edition &mdash; Overview
               </h2>
               <p
                 style={{
@@ -263,8 +190,9 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                The 2026 edition will be held entirely online. Please note that
-                the application deadline has been extended.
+                The 2026 edition will be held entirely online. The schedule
+                below is given in international time and may be adjusted if
+                necessary.
               </p>
             </div>
 
@@ -277,25 +205,17 @@ export default function Page() {
                 color: "#e5e7eb",
               }}
             >
-              <div
-                style={{
-                  padding: "10px",
-                  borderRadius: "12px",
-                  background: "rgba(249,115,22,0.12)",
-                  border: "1px solid rgba(251,146,60,0.35)",
-                }}
-              >
-                <div style={{ opacity: 0.82, marginBottom: 2 }}>
-                  New deadline
+              <div>
+                <div style={{ opacity: 0.75, marginBottom: 2 }}>
+                  Entry period
                 </div>
-                <div style={{ fontWeight: 700, color: "#fde68a" }}>
-                  15 April 2026
+                <div style={{ fontWeight: 600 }}>
+                  15 January &ndash; 1 April
                 </div>
-                <div style={{ fontSize: "11px", opacity: 0.82 }}>
-                  Final extension (UTC)
+                <div style={{ fontSize: "11px", opacity: 0.8 }}>
+                  Based on international time (UTC).
                 </div>
               </div>
-
               <div>
                 <div style={{ opacity: 0.75, marginBottom: 2 }}>
                   Results announcement
@@ -305,17 +225,15 @@ export default function Page() {
                   May shift slightly; delays will be announced on this site.
                 </div>
               </div>
-
               <div>
                 <div style={{ opacity: 0.75, marginBottom: 2 }}>
                   Instruments
                 </div>
                 <div style={{ fontWeight: 600 }}>Violin / Cello / Piano</div>
               </div>
-
               <div>
                 <div style={{ opacity: 0.75, marginBottom: 2 }}>Age range</div>
-                <div style={{ fontWeight: 600 }}>Approx. 3–12 years</div>
+                <div style={{ fontWeight: 600 }}>Approx. 3&ndash;12 years</div>
               </div>
             </div>
           </aside>
@@ -421,10 +339,8 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                Clear categories, reasonable fees, and results designed for
-                long-term artistic growth. Every participant receives written
-                feedback and an official certificate — combining the recognition
-                of a competition with the educational value of an examination.
+                Clear categories, reasonable fees, and results designed for long-term artistic growth.
+Every participant receives written feedback and an official certificate — combining the recognition of a competition with the educational value of an examination.
               </p>
             </div>
           </div>
@@ -432,7 +348,7 @@ export default function Page() {
 
         {/* Schedule */}
         <section style={sectionCard}>
-          <h2 style={sectionTitle}>Competition schedule (updated)</h2>
+          <h2 style={sectionTitle}>Competition schedule (draft)</h2>
           <p
             style={{
               margin: "0 0 14px",
@@ -440,51 +356,10 @@ export default function Page() {
               color: "#e5e7eb",
             }}
           >
-            The updated timeline for the first edition is shown below. All dates
-            are based on international time (UTC).
+            The basic timeline for the first edition is as follows. All dates
+            are based on international time (UTC). If there are changes or
+            delays, an announcement will be made on this website.
           </p>
-
-          <div
-            style={{
-              marginBottom: "16px",
-              padding: "14px 16px",
-              borderRadius: "14px",
-              background: "rgba(249,115,22,0.1)",
-              border: "1px solid rgba(251,146,60,0.35)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "12px",
-                fontWeight: 700,
-                color: "#fdba74",
-                marginBottom: "6px",
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-              }}
-            >
-              Updated deadline
-            </div>
-            <div
-              style={{
-                fontSize: "22px",
-                fontWeight: 800,
-                color: "#fff7ed",
-              }}
-            >
-              15 April 2026 (UTC)
-            </div>
-            <div
-              style={{
-                fontSize: "12px",
-                color: "#fed7aa",
-                marginTop: "4px",
-              }}
-            >
-              Final extension — no further extensions will be announced.
-            </div>
-          </div>
-
           <ul
             style={{
               margin: "0 0 8px 18px",
@@ -494,14 +369,10 @@ export default function Page() {
               lineHeight: 1.7,
             }}
           >
-            <li>
-              Entry period: 15 January – 15 April 2026{" "}
-              <strong>(Final Extension)</strong>
-            </li>
-            <li>Video submission deadline: 15 April 2026</li>
-            <li>Results announcement: around 10 May 2026</li>
+            <li>Entry period: 15 January &ndash; 1 April</li>
+            <li>Video submission deadline: 1 April (same as entry close)</li>
+            <li>Results announcement: around 10 May</li>
           </ul>
-
           <a href="/guidelines" style={{ textDecoration: "none" }}>
             <span
               style={{
@@ -512,7 +383,7 @@ export default function Page() {
                 color: "#facc6b",
               }}
             >
-              View detailed guidelines →
+              View detailed guidelines &rarr;
             </span>
           </a>
         </section>
