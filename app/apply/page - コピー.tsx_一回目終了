@@ -1,6 +1,7 @@
 "use client";
 
 import type { CSSProperties } from "react";
+import Script from "next/script";
 
 export default function ApplyPage() {
   const wrapper: CSSProperties = {
@@ -100,6 +101,33 @@ export default function ApplyPage() {
     color: "#fbbf24",
   };
 
+  const paymentGrid: CSSProperties = {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+    gap: "16px",
+    marginTop: "12px",
+  };
+
+  const paymentCard: CSSProperties = {
+    borderRadius: "14px",
+    border: "1px solid rgba(202,138,4,0.55)",
+    padding: "14px 16px 18px",
+    background: "rgba(15,23,42,0.9)",
+  };
+
+  const price: CSSProperties = {
+    margin: "4px 0 10px",
+    fontSize: "14px",
+    fontWeight: 600,
+    color: "#facc15",
+  };
+
+  const small: CSSProperties = {
+    fontSize: "12px",
+    marginTop: "6px",
+    color: "#e5e7eb",
+  };
+
   const extensionBanner: CSSProperties = {
     margin: "0 0 20px",
     padding: "14px 16px",
@@ -151,57 +179,74 @@ export default function ApplyPage() {
     letterSpacing: "0.06em",
   };
 
-  const paymentNotice: CSSProperties = {
-    marginTop: "12px",
-    padding: "20px 18px",
-    borderRadius: "16px",
-    background:
-      "linear-gradient(135deg, rgba(59,130,246,0.16), rgba(15,23,42,0.92))",
-    border: "1px solid rgba(96,165,250,0.45)",
-  };
-
-  const paymentNoticeTitle: CSSProperties = {
-    margin: "0 0 8px",
-    fontSize: "18px",
-    fontWeight: 700,
-    color: "#dbeafe",
-  };
-
   return (
     <main style={wrapper}>
+      <Script
+        src="https://www.paypal.com/sdk/js?client-id=BAAAZ14LHlKNjiIutEHITDYC9Cz2GVgoG2LiN4qBJtPb6q7tTiWpQOT2CcD9izf9Pjhyn0Ayo0QKjXr3Ig&components=hosted-buttons&disable-funding=venmo&currency=USD"
+        strategy="afterInteractive"
+      />
+      <Script
+        id="paypal-hosted-buttons"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            function renderHostedButtons() {
+              if (!window.paypal || !paypal.HostedButtons) {
+                setTimeout(renderHostedButtons, 200);
+                return;
+              }
+              paypal.HostedButtons({
+                hostedButtonId: "53KJFRG5XR8LA"
+              }).render("#paypal-container-53KJFRG5XR8LA");
+              paypal.HostedButtons({
+                hostedButtonId: "BCHDRCV6H6PM8"
+              }).render("#paypal-container-BCHDRCV6H6PM8");
+              paypal.HostedButtons({
+                hostedButtonId: "9NE36L8ZC5682"
+              }).render("#paypal-container-9NE36L8ZC5682");
+              paypal.HostedButtons({
+                hostedButtonId: "BJLYR5ZKTYVZL"
+              }).render("#paypal-container-BJLYR5ZKTYVZL");
+            }
+            renderHostedButtons();
+          `,
+        }}
+      />
+
       <section style={card}>
         <h1 style={title}>How to Apply</h1>
         <p style={p}>
           Please follow the steps below to complete your application for the AIFA
-          International Music Competition <strong>2027 Spring Edition</strong>.
+          International Music Competition (2026 Spring Edition).
         </p>
 
         <div style={extensionBanner}>
-          <div style={extensionTop}>Next Edition</div>
-          <p style={extensionMain}>2027 Spring Edition — Applications Open</p>
+          <div style={extensionTop}>Final Extension</div>
+          <p style={extensionMain}>Application Deadline Extended to 15 April 2026 (UTC)</p>
           <p style={extensionSub}>
-            Applications for the next AIFA International Music Competition are
-            now open. The entry and video submission deadline is{" "}
-            <strong>1 April 2027 (UTC)</strong>.
+            To provide additional opportunities for participation, the application
+            deadline has been extended. This is the final extension and no further
+            extensions will be announced.
           </p>
         </div>
 
-        <h2 style={h3}>Application Schedule (2027 Spring Edition)</h2>
+        <h2 style={h3}>Application Schedule (2026 Edition)</h2>
         <p style={p}>
-          <strong>Entry period:</strong> Open now — April 1, 2027
+          <strong>Entry period:</strong> January 15 — April 15, 2026 (Final Extension)
           <br />
-          <strong>Video submission deadline:</strong> April 1, 2027
+          <strong>Video submission deadline:</strong> April 15, 2026
           <br />
-          <strong>Results announcement:</strong> around May 10, 2027
+          <strong>Results announcement:</strong> around May 10, 2026 (subject to minor
+          adjustments; any delays will be announced on this website)
         </p>
 
         <div style={infoBox}>
           <p style={infoTitle}>Important Note</p>
           <p style={p}>
             If you would like to secure your place first, you may complete the{" "}
-            <strong>entry form before uploading your video</strong>. In that
-            case, please submit your video link later, no later than{" "}
-            <strong>1 April 2027 (UTC)</strong>.
+            <strong>payment and entry form before uploading your video</strong>.
+            In that case, please submit your video link later, no later than{" "}
+            <strong>15 April 2026 (UTC)</strong>.
           </p>
         </div>
 
@@ -224,70 +269,94 @@ export default function ApplyPage() {
               <br />
               <br />
               If your video is not ready yet, you may submit it later, as long as
-              the video link is sent by <strong>1 April 2027 (UTC)</strong>.
+              the video link is sent by <strong>15 April 2026 (UTC)</strong>.
             </p>
           </div>
 
           <div style={stepCard}>
-            <h3 style={stepTitle}>Step 3 — Payment</h3>
+            <h3 style={stepTitle}>Step 3 — Pay the Participation Fee</h3>
             <p style={p}>
-              The online payment page is currently being prepared. Please check
-              back soon for payment options.
+              Choose the appropriate entry option and pay securely via{" "}
+              <strong>PayPal</strong>. Please complete the payment before
+              submitting the entry form.
             </p>
           </div>
 
           <div style={stepCard}>
             <h3 style={stepTitle}>Step 4 — Submit Entry Form</h3>
             <p style={p}>
-              Fill in the online entry form with your details, repertoire, and
-              video link.
+              After payment, fill in the online entry form with your details,
+              repertoire, and video link.
               <br />
               <br />
               If the video is not yet available at the time of entry, you may
-              submit the form first and send the video link afterward. For
-              minors, a parent or guardian must provide consent for
-              participation.
+              submit the form first and send the video link afterward. For minors,
+              a parent or guardian must provide consent for participation.
             </p>
           </div>
         </div>
 
         <div style={btnWrap}>
           <a style={primaryBtn} href="#payment">
-            Payment Information
+            Pay Entry Fee
           </a>
-
-          <a
-            style={btn}
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeMUm9h6idh989_XMv4mdq2EP4Gt63BEzYm2Ikfb99oVyG2HA/viewform?usp=publish-editor"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a style={btn} href="/entry">
             Go to Entry Form
           </a>
-
           <a style={btn} href="/categories">
             Categories &amp; Rules
           </a>
         </div>
 
         <section id="payment" style={{ marginTop: "28px" }}>
-          <h2 style={h3}>Entry Fee Payment</h2>
+          <h2 style={h3}>Pay Entry Fee (2026 Spring Edition)</h2>
+          <p style={p}>
+            Please select one option below. Early Bird and combined discounts
+            apply based on the payment date. After payment, keep your PayPal
+            transaction ID and enter it in the entry form.
+          </p>
 
-          <div style={paymentNotice}>
-            <h3 style={paymentNoticeTitle}>Payment page under preparation</h3>
-            <p style={p}>
-              The payment system for the <strong>2027 Spring Edition</strong> is
-              currently being prepared.
-              <br />
-              Please check back soon. Thank you for your patience.
-            </p>
+          <div style={paymentGrid}>
+            <div style={paymentCard}>
+              <h3 style={stepTitle}>Standard</h3>
+              <p style={price}>US$110</p>
+              <div id="paypal-container-53KJFRG5XR8LA" />
+              <p style={small}>For regular entries.</p>
+            </div>
+
+            <div style={paymentCard}>
+              <h3 style={stepTitle}>Early Bird</h3>
+              <p style={price}>US$90</p>
+              <div id="paypal-container-BCHDRCV6H6PM8" />
+              <p style={small}>Available until February 28.</p>
+            </div>
+
+            <div style={paymentCard}>
+              <h3 style={stepTitle}>Early Bird + 1st Prize Discount</h3>
+              <p style={price}>US$85</p>
+              <div id="paypal-container-9NE36L8ZC5682" />
+              <p style={small}>
+                For participants who have won 1st prize in another competition
+                and pay by February 28.
+              </p>
+            </div>
+
+            <div style={paymentCard}>
+              <h3 style={stepTitle}>1st Prize Discount</h3>
+              <p style={price}>US$105</p>
+              <div id="paypal-container-BJLYR5ZKTYVZL" />
+              <p style={small}>
+                For participants who have won 1st prize in another competition
+                (after the Early Bird period).
+              </p>
+            </div>
           </div>
 
           <p style={note}>
-            Your application will be complete only when both the payment and the
-            entry form have been received. If your video is not ready yet, you
-            may send the video link afterward, provided that it is submitted by{" "}
-            <strong>1 April 2027 (UTC)</strong>.
+            Your application is complete only when{" "}
+            <strong>both the payment and the entry form</strong> have been
+            received. If your video is not ready yet, you may send the video link
+            afterward, provided that it is submitted by <strong>15 April 2026 (UTC)</strong>.
           </p>
         </section>
       </section>

@@ -56,7 +56,7 @@ export default function Page() {
     color: "#e5e7eb",
   };
 
-  const noticeBadge: CSSProperties = {
+  const extensionBadge: CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
     gap: "8px",
@@ -116,13 +116,15 @@ export default function Page() {
             gap: "24px",
           }}
         >
+          {/* Left side: main message */}
           <div>
-            <div style={noticeBadge}>
-              <span>Next Edition</span>
+            <div style={extensionBadge}>
+              <span>Final Extension</span>
               <span style={{ opacity: 0.7 }}>•</span>
-              <span>2027 Spring</span>
+              <span>Last Chance to Apply</span>
             </div>
 
+            {/* ロゴ＋タイトル */}
             <div
               style={{
                 display: "flex",
@@ -134,7 +136,11 @@ export default function Page() {
               <img
                 src="/aimc-logo.png"
                 alt="AIFA International Music Competition logo"
-                style={{ height: "72px", width: "auto", flexShrink: 0 }}
+                style={{
+                  height: "72px",
+                  width: "auto",
+                  flexShrink: 0,
+                }}
               />
               <h1
                 style={{
@@ -157,19 +163,19 @@ export default function Page() {
                 color: "#cbd5f5",
               }}
             >
-              The next AIFA International Music Competition will be held as the{" "}
-              <strong>2027 Spring Edition</strong>. This online classical music
-              competition for children combines <strong>AI-based analysis</strong>{" "}
-              and an <strong>international jury</strong>, supporting young
-              musicians’ long-term artistic growth.
+              An online classical music competition for children, combining{" "}
+              <strong>AI-based analysis</strong> and an{" "}
+              <strong>international jury</strong>. Accessible, transparent, and
+              focused on long-term artistic growth instead of rankings alone.
             </p>
 
             <div style={deadlineBox}>
-              <div style={deadlineLabel}>2027 Spring Entry Period</div>
-              <p style={deadlineMain}>Open now — until 1 April 2027 (UTC)</p>
+              <div style={deadlineLabel}>New Application Deadline</div>
+              <p style={deadlineMain}>Extended to 15 April 2026 (UTC)</p>
               <p style={deadlineSub}>
-                Applications for the 2027 Spring Edition are now open. Video
-                submissions must also be completed by 1 April 2027.
+                To provide additional opportunities for participation, the
+                application deadline has been extended. This is the final
+                extension and no further extensions will be announced.
               </p>
             </div>
 
@@ -181,8 +187,9 @@ export default function Page() {
                 color: "#e5e7eb",
               }}
             >
-              The competition is open to young players of{" "}
-              <strong>Violin, Cello and Piano</strong> from around the world.
+              The first edition is a compact online competition for{" "}
+              <strong>Violin, Cello and Piano</strong>, aimed at young players
+              from around the world.
             </p>
 
             <div
@@ -194,7 +201,7 @@ export default function Page() {
               }}
             >
               <a href="/apply">
-                <button style={primaryBtn}>Apply for 2027 Spring</button>
+                <button style={primaryBtn}>Apply Now for 2026 Edition</button>
               </a>
               <a href="/categories">
                 <button style={secondaryBtn}>
@@ -203,15 +210,28 @@ export default function Page() {
               </a>
             </div>
 
-            <p style={{ fontSize: "12px", color: "#cbd5e1", margin: "0 0 6px" }}>
-              Results are scheduled to be announced around 10 May 2027.
+            <p
+              style={{
+                fontSize: "12px",
+                color: "#cbd5e1",
+                margin: "0 0 6px",
+              }}
+            >
+              Early applicants will receive priority review.
             </p>
 
-            <p style={{ fontSize: "12px", color: "#9ca3af", margin: 0 }}>
+            <p
+              style={{
+                fontSize: "12px",
+                color: "#9ca3af",
+                margin: 0,
+              }}
+            >
               Any important schedule changes will be announced on this website.
             </p>
           </div>
 
+          {/* Right side: 2026 overview */}
           <aside
             style={{
               borderRadius: "16px",
@@ -233,7 +253,7 @@ export default function Page() {
                   color: "#fefce8",
                 }}
               >
-                2027 Spring Edition — Overview
+                2026 Edition — Overview
               </h2>
               <p
                 style={{
@@ -243,8 +263,8 @@ export default function Page() {
                   color: "#e5e7eb",
                 }}
               >
-                The next edition will be held entirely online. Applications are
-                now open.
+                The 2026 edition will be held entirely online. Please note that
+                the application deadline has been extended.
               </p>
             </div>
 
@@ -266,23 +286,30 @@ export default function Page() {
                 }}
               >
                 <div style={{ opacity: 0.82, marginBottom: 2 }}>
-                  Entry deadline
+                  New deadline
                 </div>
                 <div style={{ fontWeight: 700, color: "#fde68a" }}>
-                  1 April 2027
+                  15 April 2026
                 </div>
-                <div style={{ fontSize: "11px", opacity: 0.82 }}>UTC</div>
+                <div style={{ fontSize: "11px", opacity: 0.82 }}>
+                  Final extension (UTC)
+                </div>
               </div>
 
               <div>
                 <div style={{ opacity: 0.75, marginBottom: 2 }}>
                   Results announcement
                 </div>
-                <div style={{ fontWeight: 600 }}>Around 10 May 2027</div>
+                <div style={{ fontWeight: 600 }}>Around 10 May</div>
+                <div style={{ fontSize: "11px", opacity: 0.8 }}>
+                  May shift slightly; delays will be announced on this site.
+                </div>
               </div>
 
               <div>
-                <div style={{ opacity: 0.75, marginBottom: 2 }}>Instruments</div>
+                <div style={{ opacity: 0.75, marginBottom: 2 }}>
+                  Instruments
+                </div>
                 <div style={{ fontWeight: 600 }}>Violin / Cello / Piano</div>
               </div>
 
@@ -304,35 +331,100 @@ export default function Page() {
               gap: "18px",
             }}
           >
-            <div style={{ padding: "14px 14px 18px", borderRadius: "14px", background: "#020617", border: "1px solid rgba(148,163,184,0.55)" }}>
-              <h3 style={{ margin: "0 0 6px", fontSize: "15px", fontWeight: 700, color: "#fefce8" }}>
+            <div
+              style={{
+                padding: "14px 14px 18px",
+                borderRadius: "14px",
+                background: "#020617",
+                border: "1px solid rgba(148,163,184,0.55)",
+              }}
+            >
+              <h3
+                style={{
+                  margin: "0 0 6px",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  color: "#fefce8",
+                }}
+              >
                 Global online competition
               </h3>
-              <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.6, color: "#e5e7eb" }}>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "13px",
+                  lineHeight: 1.6,
+                  color: "#e5e7eb",
+                }}
+              >
                 Participate from anywhere in the world. All rounds are held via
                 video submission, making it easier for families and teachers to
                 join without travel.
               </p>
             </div>
 
-            <div style={{ padding: "14px 14px 18px", borderRadius: "14px", background: "#020617", border: "1px solid rgba(148,163,184,0.55)" }}>
-              <h3 style={{ margin: "0 0 6px", fontSize: "15px", fontWeight: 700, color: "#fefce8" }}>
+            <div
+              style={{
+                padding: "14px 14px 18px",
+                borderRadius: "14px",
+                background: "#020617",
+                border: "1px solid rgba(148,163,184,0.55)",
+              }}
+            >
+              <h3
+                style={{
+                  margin: "0 0 6px",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  color: "#fefce8",
+                }}
+              >
                 AI-supported evaluation
               </h3>
-              <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.6, color: "#e5e7eb" }}>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "13px",
+                  lineHeight: 1.6,
+                  color: "#e5e7eb",
+                }}
+              >
                 AI helps analyse pitch, rhythm and consistency. Final artistic
-                decisions remain with experienced human jury members.
+                decisions remain with experienced human jury members, combining
+                objective data and musical insight.
               </p>
             </div>
 
-            <div style={{ padding: "14px 14px 18px", borderRadius: "14px", background: "#020617", border: "1px solid rgba(148,163,184,0.55)" }}>
-              <h3 style={{ margin: "0 0 6px", fontSize: "15px", fontWeight: 700, color: "#fefce8" }}>
-                Growth-focused feedback
+            <div
+              style={{
+                padding: "14px 14px 18px",
+                borderRadius: "14px",
+                background: "#020617",
+                border: "1px solid rgba(148,163,184,0.55)",
+              }}
+            >
+              <h3
+                style={{
+                  margin: "0 0 6px",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  color: "#fefce8",
+                }}
+              >
+                Accessible &amp; transparent
               </h3>
-              <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.6, color: "#e5e7eb" }}>
-                Every participant receives written feedback and an official
-                certificate, combining the recognition of a competition with
-                the educational value of an examination.
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "13px",
+                  lineHeight: 1.6,
+                  color: "#e5e7eb",
+                }}
+              >
+                Clear categories, reasonable fees, and results designed for
+                long-term artistic growth. Every participant receives written
+                feedback and an official certificate — combining the recognition
+                of a competition with the educational value of an examination.
               </p>
             </div>
           </div>
@@ -340,11 +432,58 @@ export default function Page() {
 
         {/* Schedule */}
         <section style={sectionCard}>
-          <h2 style={sectionTitle}>2027 Spring schedule</h2>
-          <p style={{ margin: "0 0 14px", fontSize: "14px", color: "#e5e7eb" }}>
-            The schedule for the next edition is shown below. All dates are
-            based on international time (UTC).
+          <h2 style={sectionTitle}>Competition schedule (updated)</h2>
+          <p
+            style={{
+              margin: "0 0 14px",
+              fontSize: "14px",
+              color: "#e5e7eb",
+            }}
+          >
+            The updated timeline for the first edition is shown below. All dates
+            are based on international time (UTC).
           </p>
+
+          <div
+            style={{
+              marginBottom: "16px",
+              padding: "14px 16px",
+              borderRadius: "14px",
+              background: "rgba(249,115,22,0.1)",
+              border: "1px solid rgba(251,146,60,0.35)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "12px",
+                fontWeight: 700,
+                color: "#fdba74",
+                marginBottom: "6px",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+              }}
+            >
+              Updated deadline
+            </div>
+            <div
+              style={{
+                fontSize: "22px",
+                fontWeight: 800,
+                color: "#fff7ed",
+              }}
+            >
+              15 April 2026 (UTC)
+            </div>
+            <div
+              style={{
+                fontSize: "12px",
+                color: "#fed7aa",
+                marginTop: "4px",
+              }}
+            >
+              Final extension — no further extensions will be announced.
+            </div>
+          </div>
 
           <ul
             style={{
@@ -355,9 +494,12 @@ export default function Page() {
               lineHeight: 1.7,
             }}
           >
-            <li>Entry period: Open now – 1 April 2027</li>
-            <li>Video submission deadline: 1 April 2027</li>
-            <li>Results announcement: around 10 May 2027</li>
+            <li>
+              Entry period: 15 January – 15 April 2026{" "}
+              <strong>(Final Extension)</strong>
+            </li>
+            <li>Video submission deadline: 15 April 2026</li>
+            <li>Results announcement: around 10 May 2026</li>
           </ul>
 
           <a href="/guidelines" style={{ textDecoration: "none" }}>
@@ -375,12 +517,18 @@ export default function Page() {
           </a>
         </section>
 
-        {/* Results */}
+        {/* Winners / Results */}
         <section style={sectionCard}>
-          <h2 style={sectionTitle}>Previous results</h2>
-          <p style={{ margin: "0 0 10px", fontSize: "14px", color: "#e5e7eb" }}>
-            Results from previous editions and selected performances are
-            available on the results page.
+          <h2 style={sectionTitle}>Winners &amp; results</h2>
+          <p
+            style={{
+              margin: "0 0 10px",
+              fontSize: "14px",
+              color: "#e5e7eb",
+            }}
+          >
+            After the 2026 edition has finished, prize winners and selected
+            performances will be introduced on the results page.
           </p>
           <a href="/results" style={{ textDecoration: "none" }}>
             <span
@@ -396,7 +544,7 @@ export default function Page() {
                   "linear-gradient(135deg, #facc6b, rgba(248,250,252,0.98))",
               }}
             >
-              View previous results
+              Go to results page
             </span>
           </a>
         </section>

@@ -255,16 +255,9 @@ export default function ApplyPage() {
           <a style={primaryBtn} href="#payment">
             Payment Information
           </a>
-
-          <a
-            style={btn}
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeMUm9h6idh989_XMv4mdq2EP4Gt63BEzYm2Ikfb99oVyG2HA/viewform?usp=publish-editor"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a style={btn} href="/entry">
             Go to Entry Form
           </a>
-
           <a style={btn} href="/categories">
             Categories &amp; Rules
           </a>
