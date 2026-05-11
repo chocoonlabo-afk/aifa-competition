@@ -12,28 +12,28 @@ const winners = [
     age: 10,
     name: "Mason Yuan",
     country: "United States",
-    flagSrc: "/flags/us.svg",
+    flag: "🇺🇸",
     medalSrc: "/medals/age-10.png",
   },
   {
     age: 9,
     name: "Wang Tinuo",
     country: "China",
-    flagSrc: "/flags/cn.svg",
+    flag: "🇨🇳",
     medalSrc: "/medals/age-9.png",
   },
   {
     age: 7,
     name: "Alisa Ivić",
     country: "Germany",
-    flagSrc: "/flags/de.svg",
+    flag: "🇩🇪",
     medalSrc: "/medals/age-7.png",
   },
   {
     age: 5,
     name: "Amane Yago",
     country: "Japan",
-    flagSrc: "/flags/jp.svg",
+    flag: "🇯🇵",
     medalSrc: "/medals/age-5.png",
   },
 ];
@@ -96,8 +96,8 @@ export default function ResultsPage() {
   const winnerItem: CSSProperties = {
     display: "flex",
     alignItems: "center",
-    gap: "18px",
-    padding: "16px 18px",
+    gap: "14px",
+    padding: "12px 14px",
     borderRadius: "12px",
     border: "1px solid rgba(250,204,21,0.45)",
     background:
@@ -109,7 +109,7 @@ export default function ResultsPage() {
     height: "84px",
     objectFit: "contain",
     flexShrink: 0,
-    filter: "drop-shadow(0 8px 14px rgba(0,0,0,0.45))",
+    filter: "drop-shadow(0 6px 10px rgba(0,0,0,0.35))",
   };
 
   const winnerText: CSSProperties = {
@@ -133,19 +133,7 @@ export default function ResultsPage() {
   const country: CSSProperties = {
     fontSize: "13px",
     color: "#cbd5e1",
-    marginTop: "4px",
-    display: "flex",
-    alignItems: "center",
-    gap: "7px",
-  };
-
-  const flag: CSSProperties = {
-    width: "20px",
-    height: "14px",
-    objectFit: "cover",
-    borderRadius: "2px",
-    boxShadow: "0 0 0 1px rgba(255,255,255,0.25)",
-    flexShrink: 0,
+    marginTop: "2px",
   };
 
   const quote: CSSProperties = {
@@ -203,16 +191,9 @@ export default function ResultsPage() {
                   <div style={division}>
                     Age {winner.age} Division Grand Prix
                   </div>
-
                   <div style={name}>{winner.name}</div>
-
                   <div style={country}>
-                    <img
-                      src={winner.flagSrc}
-                      alt={`${winner.country} flag`}
-                      style={flag}
-                    />
-                    <span>{winner.country}</span>
+                    {winner.flag} {winner.country}
                   </div>
                 </div>
               </div>

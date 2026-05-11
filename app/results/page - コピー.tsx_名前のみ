@@ -1,43 +1,5 @@
 import type { CSSProperties } from "react";
 
-const winners = [
-  {
-    age: 11,
-    name: "Lena Kuczyńska",
-    country: "Poland",
-    flagSrc: "/flags/pl.svg",
-    medalSrc: "/medals/age-11.png",
-  },
-  {
-    age: 10,
-    name: "Mason Yuan",
-    country: "United States",
-    flagSrc: "/flags/us.svg",
-    medalSrc: "/medals/age-10.png",
-  },
-  {
-    age: 9,
-    name: "Wang Tinuo",
-    country: "China",
-    flagSrc: "/flags/cn.svg",
-    medalSrc: "/medals/age-9.png",
-  },
-  {
-    age: 7,
-    name: "Alisa Ivić",
-    country: "Germany",
-    flagSrc: "/flags/de.svg",
-    medalSrc: "/medals/age-7.png",
-  },
-  {
-    age: 5,
-    name: "Amane Yago",
-    country: "Japan",
-    flagSrc: "/flags/jp.svg",
-    medalSrc: "/medals/age-5.png",
-  },
-];
-
 export default function ResultsPage() {
   const wrapper: CSSProperties = {
     minHeight: "calc(100vh - 64px)",
@@ -89,32 +51,15 @@ export default function ResultsPage() {
 
   const winnerList: CSSProperties = {
     display: "grid",
-    gap: "12px",
+    gap: "10px",
     margin: "18px 0 20px",
   };
 
   const winnerItem: CSSProperties = {
-    display: "flex",
-    alignItems: "center",
-    gap: "18px",
-    padding: "16px 18px",
+    padding: "12px 14px",
     borderRadius: "12px",
-    border: "1px solid rgba(250,204,21,0.45)",
-    background:
-      "linear-gradient(90deg, rgba(250,204,21,0.09), rgba(15,23,42,0.85))",
-  };
-
-  const medal: CSSProperties = {
-    width: "84px",
-    height: "84px",
-    objectFit: "contain",
-    flexShrink: 0,
-    filter: "drop-shadow(0 8px 14px rgba(0,0,0,0.45))",
-  };
-
-  const winnerText: CSSProperties = {
-    flex: 1,
-    minWidth: 0,
+    border: "1px solid rgba(250,204,21,0.35)",
+    background: "rgba(15,23,42,0.8)",
   };
 
   const division: CSSProperties = {
@@ -133,19 +78,6 @@ export default function ResultsPage() {
   const country: CSSProperties = {
     fontSize: "13px",
     color: "#cbd5e1",
-    marginTop: "4px",
-    display: "flex",
-    alignItems: "center",
-    gap: "7px",
-  };
-
-  const flag: CSSProperties = {
-    width: "20px",
-    height: "14px",
-    objectFit: "cover",
-    borderRadius: "2px",
-    boxShadow: "0 0 0 1px rgba(255,255,255,0.25)",
-    flexShrink: 0,
   };
 
   const quote: CSSProperties = {
@@ -183,7 +115,7 @@ export default function ResultsPage() {
         </p>
 
         <div style={yearBlock}>
-          <h2 style={yearTitle}>2026 Inaugural Grand Prix Winners</h2>
+          <h2 style={yearTitle}>2026 Grand Prix Winners</h2>
 
           <p style={p}>
             After careful and rigorous evaluation, the following participants
@@ -191,32 +123,35 @@ export default function ResultsPage() {
           </p>
 
           <div style={winnerList}>
-            {winners.map((winner) => (
-              <div key={winner.age} style={winnerItem}>
-                <img
-                  src={winner.medalSrc}
-                  alt={`Age ${winner.age} Division Grand Prix medal`}
-                  style={medal}
-                />
+            <div style={winnerItem}>
+              <div style={division}>Age 11 Division Grand Prix</div>
+              <div style={name}>Lena Kuczyńska</div>
+              <div style={country}>Poland</div>
+            </div>
 
-                <div style={winnerText}>
-                  <div style={division}>
-                    Age {winner.age} Division Grand Prix
-                  </div>
+            <div style={winnerItem}>
+              <div style={division}>Age 10 Division Grand Prix</div>
+              <div style={name}>Mason Yuan</div>
+              <div style={country}>United States</div>
+            </div>
 
-                  <div style={name}>{winner.name}</div>
+            <div style={winnerItem}>
+              <div style={division}>Age 9 Division Grand Prix</div>
+              <div style={name}>Wang Tinuo</div>
+              <div style={country}>China</div>
+            </div>
 
-                  <div style={country}>
-                    <img
-                      src={winner.flagSrc}
-                      alt={`${winner.country} flag`}
-                      style={flag}
-                    />
-                    <span>{winner.country}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <div style={winnerItem}>
+              <div style={division}>Age 7 Division Grand Prix</div>
+              <div style={name}>Alisa Ivić</div>
+              <div style={country}>Germany</div>
+            </div>
+
+            <div style={winnerItem}>
+              <div style={division}>Age 5 Division Grand Prix</div>
+              <div style={name}>Amane Yago</div>
+              <div style={country}>Japan</div>
+            </div>
           </div>
 
           <p style={p}>
